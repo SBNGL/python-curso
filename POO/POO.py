@@ -10,8 +10,6 @@ class animales:
         print('reptiles:', self.reptiles)
         print('aves:', self.aves)
 
-Anim = animales() #Instancia de la clase (objeto)
-Anim.getDatos()
 
 class persona:
     def __init__(self, nom, ed, num):
@@ -23,9 +21,4 @@ class persona:
         print('Nombre: ', self.nombre)
         print('Edad: ', self.edad)
         print('Numero: ', self.numero)
-            
-perfil = persona('Arlex', 25, 234562)    
-
-
-perfil.getDatos()    
         
