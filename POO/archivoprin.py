@@ -1,4 +1,4 @@
-from ejercicios import Circulo, Cuadrado
+from ejercicios import Circulo, Cuadrado, mostrarDatos
 
 def main():
     while True:
@@ -18,13 +18,11 @@ def main():
         if opcion == "1":
             lado = float(input('Ingrese el lado del cuadrado: '))
             cuadrado = Cuadrado(lado)
-            print('Area: ', cuadrado.area)
-            print('Perimetro: ', cuadrado.perim)
+            mostrarDatos(cuadrado)
         elif opcion == "2":
             radio = float(input('Ingrese el radio del circulo: '))
             circulo = Circulo(radio)
-            print('Area: ', circulo.area)
-            print('Perimetro: ', circulo.perim)
+            mostrarDatos(circulo)
         elif opcion == "3":
             break
         else:

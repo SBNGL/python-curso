@@ -1,33 +1,52 @@
 import math
 
 class Figura:
+    area = None
+    perim = None
+    
     def __init__(self):
         pass
     
-    def area(self):
+    def Calculararea(self):
         pass
     
-    def perim(self):
+    def Calcularperim(self):
         pass
     
 
 
 class Cuadrado(Figura):
-        def __init__(self, lado):
-            self.lado = lado
+    def __init__(self, lado):
+        self.nombre = __class__.__name__
+        self.lado = lado
         
-        def area(self):
-            return  self.lado * self.lado
+    def Calculararea(self):
+        self.area = self.lado * self.lado
         
-        def perim(self):
-            return 4 * self.lado
+    def Calcularperim(self):
+        self.perim = 4 * self.lado
+        
+    def __str__(self):
+        return f'{self.nombre}, lado:{self.lado}'
 
 class Circulo(Figura):
-        def __init__(self, radio):
-            self.radio = radio
-            
-        def area(self):
-             return math.pi * self.radio * self.radio
+    
+    def __init__(self, radio):
+        self.nombre = __class__.__name__
+        self.radio = radio
+              
+    def Calculararea(self):
+        self.area = math.pi * self.radio * self.radio
          
-        def perim(self):
-            return 2 * math.pi * self.radio      
+    def Calcularperim(self):
+        self.perim = 2 * math.pi * self.radio     
+        
+    def __str__(self):
+        return f'{self.nombre}, radio:{self.radio}'
+
+def mostrarDatos(figura):
+    figura.Calculararea()
+    figura.Calcularperim()
+    print(figura)        
+    print('Area: ', figura.area())
+    print('Perimetro: ', figura.perim())
