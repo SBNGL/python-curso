@@ -4,12 +4,12 @@ while True:
         edad = int(input('¿Cual es tu edad?: '))
         div = 10/edad
         print(edad)
-    except ValueError:
-        print('Ingrese un numero entero')
-    except ZeroDivisionError:
-        print('No se puede dividir entre 0')       
+    except (ValueError, ZeroDivisionError) as err:
+        print('lo ingresado es incorrecto, ', err)  
     else:
         print('Gracias')
         break    
+    finally:
+        print('Se acabó el programa..')
         
     
